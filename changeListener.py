@@ -45,7 +45,7 @@ class changeListener(object):
         return self.process_im in (p.name() for p in psutil.process_iter())
 
     def listen(self):
-        time.sleep(30)
+        time.sleep(10)
         if self.cached_stamp != os.stat(self.file).st_mtime:
             self.cached_stamp = os.stat(self.file).st_mtime
             self.file_count+=1
@@ -60,6 +60,6 @@ class changeListener(object):
 if __name__ == "__main__":
     listener = changeListener(FILE_TO_WATCH, BACKUP_DIRECTORY, PROCESS_IMAGE_NAME)
     print("Listener started successfully.")
-    # time.sleep(5)
+    time.sleep(30)
     while listener.check_process():
         listener.listen()
