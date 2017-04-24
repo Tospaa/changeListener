@@ -42,7 +42,7 @@ class changeListener(object):
                     self.file_count+=1
 
     def check_process(self):
-        return process_im in (p.name() for p in psutil.process_iter())
+        return self.process_im in (p.name() for p in psutil.process_iter())
 
     def listen(self):
         time.sleep(30)
