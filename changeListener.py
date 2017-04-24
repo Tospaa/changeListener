@@ -10,8 +10,8 @@ BACKUP_GENERIC_NAME = r"\backup{0}.sav"  """ File format extension of the generi
                                              IF YOU DON'T KNOW WHAT YOU ARE DOING!!!"""
 
 class changeListener(object):
-    def __init__(self, file, backupdir, backup_generic):
-        self.file = file
+    def __init__(self, filetw, backupdir, backup_generic):
+        self.file = filetw
         self.backupdir = backupdir
         self.backup_generic = backup_generic
         self.cached_stamp = os.stat(self.file).st_mtime
