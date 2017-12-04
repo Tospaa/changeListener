@@ -106,3 +106,5 @@ if __name__ == "__main__":
     while listener.check_process():
         listener.listen()
     listener.notify("Listener closed due to termination of the main process.")
+    if not GNTP:
+       input("Press Enter to exit.")
